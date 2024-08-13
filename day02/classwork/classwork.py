@@ -1,0 +1,2 @@
+name=("vano")
+print=(name)
