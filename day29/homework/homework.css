@@ -1,0 +1,16 @@
+div {
+    width: 100px;
+    height: 100px;
+
+    background-color: rgba(142, 25, 25, 0.16);
+
+    padding: 20px;
+
+    /* border: 20px solid black; */
+
+    border-width: 20px;
+    border-style: solid;
+    border-color: rgba(154, 70, 70, 0.225);
+
+    margin: 10px;
+}
