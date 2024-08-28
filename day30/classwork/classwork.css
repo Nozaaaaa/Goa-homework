@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
+ 
+* {
+    font-family: bungee tint, sans-serif;
+}
+
+
+
+a {
+    text-decoration: double;
+
+    text-decoration-line: none;
+    text-decoration-color: aqua;
+    text-decoration-style:double ;
+}
+
+
+a:hover {
+    color: blueviolet;
+    text-decoration: line-through solid greenyellow;
+}
+
+a:active{
+    color: brown;
+    text-decoration: line-through solid aquamarine
+}
+
+
+a:visited{
+    color: bisque;
+}
