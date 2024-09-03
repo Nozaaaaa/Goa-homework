@@ -1,0 +1,45 @@
+#box {
+    display: flex;
+    gap: 50px;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+nav {
+    background-color: #222;
+    padding: 15px;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #22222267;
+    padding: 25px;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+img {
+    border-radius: 15px;
+}
+
+
+
+#main-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
