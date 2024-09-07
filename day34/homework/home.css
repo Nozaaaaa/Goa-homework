@@ -1,0 +1,135 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    background-color: rgb(65, 57, 106);
+    color: white;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: fixed;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+button:hover {
+    background-color: white;
+    color: rgb(65, 57, 106);
+}
+
+section {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(190, 71, 61, 0.523);
+    border: 5px solid purple;
+}
+
+main {
+    padding-top: 90px;
+}
+/* yauil */
+button {
+    width: fit-content;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #3b3b3b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+button:hover {
+    background-color: #222;
+}
+ 
+.product {
+    background-color: rgb(102, 73, 106);
+    display: flex;
+    border: 1px solid #22222267;
+    padding: 25px;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+img {
+    border-radius: 15px; 
+}
+
+.product-name {
+    font-size: 1.5rem;
+}
+
+#main-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.price {
+    font-size: 40px;
+}
+
+.p-div {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.main-p {
+    font-size: 3rem;
+    color: #222;
+}
+
+#cart-div{
+  margin-right: 200px;
+  margin-left: -340px;
+  margin-top: 330px;
+}
+
+
+a{
+  color: aliceblue;
+  text-decoration: none;
+}
+
+body{
+    background-color: rgb(136, 126, 183);
+}
