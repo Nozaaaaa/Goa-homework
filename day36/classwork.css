@@ -1,0 +1,19 @@
+section{
+    background-color: aquamarine;
+
+    width: 150px;
+    height: 150px;
+}
+
+section:hover{
+    width: 200px;
+    height: 200px;
+}
+
+section:active{
+    background-color:blueviolet;
+    position: absolute;
+
+    top: 150px;
+    left: 150px;
+}
