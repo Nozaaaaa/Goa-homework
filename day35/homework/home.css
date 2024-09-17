@@ -1,3 +1,94 @@
+.div1{
+    background-color: white;
+    width: 600px;
+    height: 500px;
+    margin-left: 650px;
+    margin-top: 200px;
+    border-radius: 5%;
 
+
+
+
+}
+img{
+height: 500px;
+    width: 300px;
+    
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+    
+    
+    
+}
+body{
+
+    background-color: hsl(30, 38%, 92%);
+}
+.h4{
+    margin-left: 320px;
+    margin-top: -450px;
+    color: gray;
+    font-family: Montserrat;
+    
+    
+    }
+    
+.h12{
+    font-family:Fraunces ;
+    font-weight: 700;
+    margin-left: 320px;
+    
+    
+}
+.h5{
+margin-left: 320px;
+color: grey;
+font-family: Montserrat;
+font-weight: 700px;
+}
+
+.lurji{
+margin-left: 320px;
+margin-top: 50px;
+color: green;
+
+}
+.mwvane{
+margin-top: -50px;
+    margin-left: 470px;
+    color: gray;
+}
+
+  #cart-div{ 
+    position: absolute;
+    margin-left: 66rem;
+    margin-top: -5rem;
+ } 
+
+ .price {
+    position: absolute;
+    font-size: 40px;
+    margin-left: 20rem;
+} 
+
+a{
+    color: aliceblue;
+    text-decoration: none;
+  }
+
+  button {
+    width: fit-content;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #3b3b3b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.25s;
+}
+
+button:hover {
+    background-color: #222;
+}
 
   
