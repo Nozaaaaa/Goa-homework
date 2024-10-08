@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Element</title>
+</head>
+<body>
+
+    <h1 id="header"></h1>
+    <img id="myImage" src="https://static.vecteezy.com/system/resources/previews/023/790/913/original/semple-banyan-tree-clipart-transparent-background-free-free-png.png" alt="Placeholder Image">
+    
+    <p id="description">atjdgyahiuodila.</p>
+    
+    <button id="myButton">button me!</button>
+
+    <script>
+        // 1. გამოვიკვლიოთ document-ი
+        const header = document.getElementById("header");
+        const image = document.getElementById("myImage");
+        const description = document.getElementById("description");
+        const button = document.getElementById("myButton");
+
+        // Header
+        header.style.color = "blue"; 
+        header.style.fontSize = "2em"; 
+        header.innerText = "New photo"; 
+        header.style.textAlign = "center"; 
+        header.style.marginBottom = "20px"; 
+
+        // Image
+        image.src = "https://via.placeholder.com/400/FF5733/FFFFFF?text=New+Image";
+        image.alt = "New photo";
+        image.style.border = "2px solid black"; 
+        image.style.borderRadius = "10px";
+        image.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)"; 
+
+        // Description
+        description.style.color = "green"; 
+        description.style.fontSize = "1.2em"; 
+        description.innerText = "This is a description of the details."; 
+        description.style.textAlign = "center"; 
+        description.style.marginTop = "10px"; 
+
+        // Button
+        button.style.backgroundColor = "orange"; 
+        button.style.color = "white"; 
+        button.style.padding = "10px 20px"; 
+        button.style.border = "none";
+        button.style.borderRadius = "5px";
+    </script>
+
+</body>
+</html>

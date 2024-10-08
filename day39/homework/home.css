@@ -1,0 +1,70 @@
+:root {
+    --primary-color: #4CAF50;  
+    --background-color: #f9f9f9; 
+    --text-color: #333;        
+    --font-family: 'Arial', sans-serif;
+    --border-radius: 8px;      
+    --padding: 15px;
+    --margin: 10px;            
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 20px;
+    padding: 50px;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: var(--margin);
+}
+
+h1 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.profile {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--margin);
+}
+
+a {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    margin: var(--margin) 0;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-align: center;
+}
+
+a:hover {
+    background-color: darkgreen;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: var(--padding);
+    color: var(--text-color);
+}
