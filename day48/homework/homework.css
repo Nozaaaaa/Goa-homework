@@ -1,0 +1,51 @@
+.div1{
+    position: absolute;
+    width: 100px;
+    margin-top: -25px;
+    height: 100px;
+    background-color: aqua;
+}
+
+.div2{
+    position: absolute;
+    margin-left: 160px;
+    margin-top: -20px;
+    width: 100px;
+    height: 100px;
+    background-color:green;
+    border-radius: 50%;
+}
+.heart{
+    margin-left: 350px;
+    margin-top: 100px;
+position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px  90px red;
+    animation: heartbeat 0.7s linear infinite;
+}
+
+
+.heart::before{
+    content: "";
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-color: red;
+    margin-top: -50%;
+    border-radius: 50px;
+    box-shadow: -10px -10px 90px red;
+}
+.heart:after{
+    content: "";
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-color: red;
+    right: -50%;
+    border-radius:50px;
+    box-shadow: 10px 10px 90px red;
+}
