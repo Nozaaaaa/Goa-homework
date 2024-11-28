@@ -17,5 +17,5 @@ matrix = [
 ]
 
 row_sums, column_sums = sum_rows_and_columns(matrix)
-print("რიგების ჯამები:", row_sums)
-print("სვეტების ჯამები:", column_sums)
+print(column_sums, row_sums)
+
