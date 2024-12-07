@@ -1,0 +1,45 @@
+ <!-- გამოიყენეთ ქონფირმ ბოქსი და მომხმარებელ კითხეთ სამი კითხვა, პირველი არის უნდათ თუ არა შავი ეკრანი, მეორე არის უნდათ თუ არა დიდი ტექსტი,
+ მესამე უნდათ თუ არა გრძელი ტექსტი, ამ სამი ყუთის შემდეგ გამოიტანეთ შესაბამისი საიტი. -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>User Preferences</title>
+ </head>
+ <body>
+ 
+     <h1>დააჭირე შენს არჩევანს</h1>
+ 
+     <button onclick="ask()">Submit</button>
+ 
+     <h2 id="result"></h2> 
+ 
+     <script>
+         function ask() {
+        let blackScreen = confirm("Do you want a black screen?");
+         let largeText = confirm("Do you want large text?");
+        let longText = confirm("Do you want long text?");
+
+        if (blackScreen) {
+        document.body.classList.add("black-screen");
+        }
+         if (largeText) {
+        document.body.classList.add("large-text");
+        }
+        if (longText) {
+        document.body.classList.add("long-text");
+        }
+        let content = "Hello Goa";
+        if (longText) {
+        content += "";
+        }
+        document.body.innerHTML = "<h1>" + content + "</h1>";
+
+    }  
+     </script>
+ 
+ </body>
+ </html>
+ 
