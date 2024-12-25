@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="hw.css">
+</head>
+<body>
+
+ 
+
+<script>
+    // List of valid choices
+    const choices = ['rock', 'paper', 'scissors'];
+
+    // Function to start the game
+    function playGame(playerChoice) {
+      const computerChoice = getComputerChoice();
+      const result = getResult(playerChoice, computerChoice);
+      
+      // Display results
+      document.getElementById('result').innerHTML = `
+        You chose: <strong>${playerChoice}</strong><br>
+        Computer chose: <strong>${computerChoice}</strong><br>
+        <strong>${result}</strong>
+      `;
+      
+      // Show the "Play Again" button
+      document.getElementById('restart-btn').style.display = 'inline-block';
+    }
+
+    // Get the computer's random choice
+    function getComputerChoice() {
+      const randomIndex = Math.floor(Math.random() * 3);
+      return choices[randomIndex];
+    }
+
+    // Determine the winner
+    function getResult(playerChoice, computerChoice) {
+      if (playerChoice === computerChoice) {
+        return "It's a tie!";
+      } 
+      if (
+        (playerChoice === 'rock' && computerChoice === 'scissors') ||
+        (playerChoice === 'paper' && computerChoice === 'rock') ||
+        (playerChoice === 'scissors' && computerChoice === 'paper')
+      ) {
+        return "You win!";
+      } else {
+        return "You lose!";
+      }
+    }
+
+    // Restart the game
+    function restartGame() {
+      document.getElementById('result').innerHTML = '';
+      document.getElementById('restart-btn').style.display = 'none';
+    }
+  </script>
+
+</body>
+
+  <h1>Rock Paper Scissors</h1>
+  
+  <div class="choices">
+    <div class="choice" onclick="playGame('rock')">Rock</div>
+    <div class="choice" onclick="playGame('paper')">Paper</div>
+    <div class="choice" onclick="playGame('scissors')">Scissors</div>
+  </div>
+
+  <div class="result" id="result"></div>
+  
+  <button id="restart-btn" onclick="restartGame()">Play Again</button>
+
+
+</body>
+</html>

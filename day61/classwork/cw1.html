@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8yshoafi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .cookie-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .cookie-icon {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+        .score {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+        .message {
+            font-size: 1.2rem;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cookie-container">
+        <img class="cookie-icon" src="https://i.imgflip.com/58f14u.png" alt="cookie" id="cookieIcon" onclick="incrementScore()" />
+        <div class="score" id="score">0</div>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+           let score = 0;
+
+           function incrementScore() {
+              score++; 
+
+              if (score % 100 === 0) {  
+                  score *= 2;  
+                 document.getElementById('message').textContent = '';
+              } else {
+                 document.getElementById('message').textContent = '';
+             }
+
+             document.getElementById('score').textContent = score;
+          }
+    </script>
+
+</body>
+</html>

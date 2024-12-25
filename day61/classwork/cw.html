@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>გასტილული ქაუნთერი</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .counter-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .counter-display {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            margin-bottom: 25px;
+        } 
+        button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            margin: 5px;
+            cursor: pointer; 
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter-container">
+        <div class="counter-display" id="counter">0</div>
+        
+        <div class="input-field">
+             <input type="number" id="changeAmount" value="1" /> 
+        </div>
+        
+        <button class="increase" onclick="changeCounter('increase')">მიმატება</button>
+        <button class="decrease" onclick="changeCounter('decrease')">შემცირება</button>
+        <button class="reset" onclick="resetCounter()">რესტარტი</button>
+    </div>
+
+    <script> 
+
+let counter = 0;
+
+function changeCounter(action) {
+    const changeAmount = parseInt(document.getElementById('changeAmount').value);
+    
+    if (action === 'increase') {
+        counter += changeAmount;
+    } else if (action === 'decrease') {
+        counter -= changeAmount;
+    }
+    
+    document.getElementById('counter').textContent = counter;
+}
+
+function resetCounter() {
+    counter = 0;
+    document.getElementById('counter').textContent = counter;
+}
+</script>
+
+    </script>
+</body>
+</html>
