@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Display App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-image: "https://tse2.mm.bing.net/th?id=OIP.8DF9HLt3YN3Pzq_10jdkcAHaEK&pid=Api&P=0&h=220";
+        }
+        #display {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Display App</h1>
+    <label>
+        <input type="radio" name="option" value="number" checked> რიცხვი
+    </label>
+    <label>
+        <input type="radio" name="option" value="letter"> ასო
+    </label>
+    <br><br>
+    <button onclick="startDisplay()">გასტარტვა</button>
+    <button onclick="stopDisplay()">გაჩერება</button>
+    <div id="display"></div>
+    
+    <script>
+        let interval;
+        
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 100) + 1;
+        }
+        
+        function getRandomLetter() {
+            const letters = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+            return letters[Math.floor(Math.random() * letters.length)];
+        }
+        
+        function startDisplay() {
+            stopDisplay(); 
+            interval = setInterval(() => {
+                const option = document.querySelector('input[name="option"]:checked').value;
+                document.getElementById("display").textContent = option === "number" ? getRandomNumber() : getRandomLetter();
+            }, 1000);
+        }
+        
+        function stopDisplay() {
+            clearInterval(interval);
+        }
+    </script>
+</body>
+</html>

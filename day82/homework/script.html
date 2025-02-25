@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url(https://lh3.googleusercontent.com/cNeWDKiv2En-HV0o0kqLDYelVhbNmXWWZa5e2J1wePxxe8txlJEy8_5lYsR0tXsOZpk_hcyK32Ga9w=w1200-h630-p);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 800px;
+        }
+        .container {
+            background: white;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background: url(https://i.ytimg.com/vi/PF8d4f-GU-4/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGEMgZSggMA8=&rs=AOn4CLAlrS-1P1Vy3H7AJPmMPoGehrz--A);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size:500px
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .start { background: green; color: white; }
+        .stop { background: red; color: white; }
+        #display {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Countdown Timer</h1>
+        <input type="number" id="timeInput" placeholder="Enter time (0-10000)" min="0" max="10000">
+        <br>
+        <button class="start" onclick="startTimer()">Start</button>
+        <button class="stop" onclick="stopTimer()">Stop</button>
+        <div id="display">0</div>
+    </div>
+
+    <script>
+        let timer;
+        let currentTime = 0;
+        let maxTime = 0;
+        
+        function startTimer() {
+            maxTime = parseInt(document.getElementById('timeInput').value);
+            if (isNaN(maxTime) || maxTime <= 0 || maxTime > 10000) {
+                alert("Please enter a valid number between 0 and 10000.");
+                return;
+            }
+            currentTime = 0;
+            document.getElementById('display').textContent = currentTime;
+            clearInterval(timer);
+            timer = setInterval(() => {
+                currentTime++;
+                if (currentTime >= maxTime) {
+                    document.getElementById('display').textContent = "Time's up";
+                    clearInterval(timer);
+                } else {
+                    document.getElementById('display').textContent = currentTime;
+                }
+            }, 1000);
+        }
+        
+        function stopTimer() {
+            clearInterval(timer);
+        }
+    </script>
+</body>
+</html>
