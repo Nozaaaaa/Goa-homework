@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Slicing და სხვა სავარჯიშოები</title>
+    <script>
+        function slicingExample() {
+            // 1) JavaScript პროგრამა slicing-ით
+            let text = prompt("1) შეიყვანეთ ტექსტი:");
+            let startIndex = parseInt(prompt("შეიყვანეთ საწყისი ინდექსი:"), 10);
+            let slicedText = text.slice(startIndex);
+            alert("ამოჭრილი ტექსტი: " + slicedText);
+
+            // 2) slicing JavaScript-ით (შევქმენი მხოლოდ ერთი კოდი)
+            let x = "Hello World";
+            let slicedExample = x.slice(2, 6); // llo 
+            alert(`2) slicing JS ახსნა:\nx = "Hello World"\nx.slice(2, 6) -> "${slicedExample}"`);
+
+            // 3) Slicing ახსნა JS-ში
+            alert("3) Slicing ახსნა:\nx.slice(2, 6) ნიშნავს: 2 არის საწყისი ინდექსი, 6 - საბოლოო (არ შედის).");
+
+            // 4) წინადადების თითოეული სიტყვის შებრუნება JS-ში
+            let sentence = prompt("4) შეიყვანეთ წინადადება:");
+            let reversedWords = sentence.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+            alert("შებრუნებული სიტყვები: " + reversedWords);
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Slicing სავარჯიშოები</h1>
+    <button onclick="slicingExample()">დაიწყე სავარჯიშოები</button>
+</body>
+</html>

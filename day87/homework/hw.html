@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Switcher</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+        }
+        .buttons button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" class="logo">
+        <div class="buttons">
+            <button onclick="changeLogo('React')">React</button>
+            <button onclick="changeLogo('JavaScript')">JavaScript</button>
+            <button onclick="changeLogo('HTML')">HTML</button>
+            <button onclick="changeLogo('CSS')">CSS</button>
+        </div>
+    </div>
+
+    <script>
+        const logos = {
+            React: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+            JavaScript: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+            HTML: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+            CSS: "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg"
+        };
+
+        function changeLogo(type) {
+            document.getElementById("logo").src = logos[type];
+        }
+    </script>
+</body>
+</html>

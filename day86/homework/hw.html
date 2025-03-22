@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Hello, World!</h1>
+    <p class="text">This is a paragraph with class "text".</p>
+    <p class="text">Another paragraph with class "text".</p>
+    <p>This is a simple paragraph.</p>
+    <button onclick="changeContent()">Change Content</button>
+    <button onclick="changeStyle()">Change Style</button>
+
+    <!-- 10 divs with unique IDs -->
+    <div id="div1">Div 1</div>
+    <div id="div2">Div 2</div>
+    <div id="div3">Div 3</div>
+    <div id="div4">Div 4</div>
+    <div id="div5">Div 5</div>
+    <div id="div6">Div 6</div>
+    <div id="div7">Div 7</div>
+    <div id="div8">Div 8</div>
+    <div id="div9">Div 9</div>
+    <div id="div10">Div 10</div>
+
+    <!-- 10 divs with class -->
+    <div class="styledDiv">Class Div 1</div>
+    <div class="styledDiv">Class Div 2</div>
+    <div class="styledDiv">Class Div 3</div>
+    <div class="styledDiv">Class Div 4</div>
+    <div class="styledDiv">Class Div 5</div>
+    <div class="styledDiv">Class Div 6</div>
+    <div class="styledDiv">Class Div 7</div>
+    <div class="styledDiv">Class Div 8</div>
+    <div class="styledDiv">Class Div 9</div>
+    <div class="styledDiv">Class Div 10</div>
+
+    <script>
+        // 1. getElementById
+        let titleElement = document.getElementById("title");
+        console.log(titleElement.innerText);
+
+        // 2. getElementsByClassName
+        let textElements = document.getElementsByClassName("text");
+        for (let i = 0; i < textElements.length; i++) {
+            console.log(textElements[i].innerText);
+        }
+
+        // 3. getElementsByTagName
+        let paragraphElements = document.getElementsByTagName("p");
+        for (let i = 0; i < paragraphElements.length; i++) {
+            console.log(paragraphElements[i].innerText);
+        }
+
+        // 4. innerHTML
+        function changeContent() {
+            titleElement.innerHTML = "Changed Title!";
+        }
+
+        // 5. style
+        function changeStyle() {
+            for (let i = 0; i < textElements.length; i++) {
+                textElements[i].style.color = "blue";
+                textElements[i].style.fontSize = "20px";
+            }
+        }
+
+        // Style individual divs by ID
+        for (let i = 1; i <= 10; i++) {
+            let div = document.getElementById(`div${i}`);
+            div.style.backgroundColor = "lightblue";
+            div.style.padding = "10px";
+            div.style.margin = "5px";
+            div.style.border = "1px solid black";
+        }
+
+        // Style divs by class name
+        let classDivs = document.getElementsByClassName("styledDiv");
+        for (let i = 0; i < classDivs.length; i++) {
+            classDivs[i].style.backgroundColor = "lightgreen";
+            classDivs[i].style.padding = "10px";
+            classDivs[i].style.margin = "5px";
+            classDivs[i].style.border = "1px solid black";
+        }
+
+        // Style divs by tag name
+        let allDivs = document.getElementsByTagName("div");
+        for (let i = 0; i < allDivs.length; i++) {
+            allDivs[i].style.fontSize = "18px";
+            allDivs[i].style.textAlign = "center";
+        }
+    </script>
+</body>
+</html>
