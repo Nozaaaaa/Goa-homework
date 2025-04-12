@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>husabfuonhs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 400px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .task-list {
+            margin-top: 10px;
+            border-top: 2px solid #ddd;
+            padding-top: 10px;
+        }
+        .task {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+        }
+        .btn-add { background: #007bff; }
+        .btn-number { background: #28a745; }
+        .btn-generate { background: #6f42c1; }
+        .colored-box {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="taskInput" placeholder="Enter task or number">
+        <div class="controls">
+            <button class="btn-add" onclick="addTask()">Add Task</button>
+            <button class="btn-number" onclick="addNumberTask()">Add Number</button>
+            <button class="btn-generate" onclick="generateDivs()">Generate Divs</button>
+        </div>
+        <div class="task-list" id="taskList"></div>
+    </div>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById("taskInput");
+            if (input.value.trim() === "") return;
+            const taskList = document.getElementById("taskList");
+            const div = document.createElement("div");
+            div.className = "task";
+            div.textContent = input.value;
+            taskList.prepend(div);
+            input.value = "";
+        }
+
+        function addNumberTask() {
+            const input = document.getElementById("taskInput");
+            const number = parseInt(input.value, 10);
+            if (isNaN(number)) return;
+            const taskList = document.getElementById("taskList");
+            const div = document.createElement("div");
+            div.className = "task";
+            div.textContent = number;
+
+            if (number > 20) {
+                taskList.appendChild(div);
+            } else {
+                taskList.prepend(div);
+            }
+
+            const colorMap = ["black", "red", "green", "blue", "yellow", "purple", "pink", "orange", "teal", "gray"];
+            const lastDigit = number % 10;
+            const colorDiv = document.createElement("div");
+            colorDiv.className = "colored-box";
+            colorDiv.style.background = colorMap[lastDigit];
+            taskList.appendChild(colorDiv);
+
+            if (number % 2 === 0) {
+                const circle = document.createElement("div");
+                circle.className = "colored-box";
+                circle.style.background = "blue";
+                circle.style.borderRadius = "50%";
+                taskList.appendChild(circle);
+            } else {
+                const square = document.createElement("div");
+                square.className = "colored-box";
+                square.style.background = "red";
+                taskList.prepend(square);
+            }
+            input.value = "";
+        }
+
+        function generateDivs() {
+            const taskList = document.getElementById("taskList");
+            taskList.innerHTML = "";
+            const colors = ["red", "green", "blue", "yellow", "purple", "pink", "orange", "teal", "gray", "black"];
+            let prepend = true;
+            for (let i = 0; i < 10; i++) {
+                const div = document.createElement("div");
+                div.className = "colored-box";
+                div.style.background = colors[i % colors.length];
+                if (prepend) {
+                    taskList.prepend(div);
+                } else {
+                    taskList.appendChild(div);
+                }
+                prepend = !prepend;
+            }
+        }
+    </script>
+</body>
+</html>

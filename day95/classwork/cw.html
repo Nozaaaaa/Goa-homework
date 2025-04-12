@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fgadfda</title>
+    <style>
+        .animDiv {
+            width: 200px;
+            height: 200px;
+            background-color: #4b0808;
+            color: white;
+            text-align: center;
+            line-height: 200px;
+            cursor: pointer;
+            transition: opacity 1s ease-out;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="animDiv" class="animDiv">Click me</div>
+
+    <script>
+        document.getElementById('animDiv').addEventListener('click', function() {
+            var div = this;
+
+            div.removeEventListener('click', arguments.callee);
+
+            div.classList.add('hidden');
+
+            setTimeout(function() {
+                div.classList.remove('hidden');
+
+                div.addEventListener('click', function() {
+                    var div = this;
+
+                    div.removeEventListener('click', arguments.callee);
+                    div.classList.add('hidden');
+
+                    setTimeout(function() {
+                        div.classList.remove('hidden');
+                        div.addEventListener('click', function() {
+                        });
+                    }, 1000);
+                });
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Div Child Example</title>
+  <style>
+    .container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .child {
+      width: 100px;
+      height: 100px;
+      background-color: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="mainDiv">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+  </div>
+
+  <div class="container" id="div1"><p>Text inside div1</p></div>
+  <div class="container" id="div2"></div>
+  <div class="container" id="div3"><div>Nested child</div></div>
+
+  <script>
+    // ნაწილი 1: მომხმარებლის მიერ არჩეულ child-ს bg-ს ცვლის
+    let choice = prompt("შეიყვანეთ რიცხვი 1-4 შორის რომელი child გსურთ შეიღებოს?");
+    let children = document.querySelectorAll("#mainDiv .child");
+    let index = parseInt(choice) - 1;
+
+    if (index >= 0 && index < children.length) {
+      children[index].style.backgroundColor = "orange";
+    }
+
+    // ნაწილი 2: აირჩიეთ div1, div2 ან div3 და შეამოწმეთ, აქვს თუ არა შვილი
+    let divChoice = prompt("აირჩიეთ div: 1, 2 ან 3");
+    let selectedDiv = document.getElementById(`div${divChoice}`);
+
+    if (selectedDiv && selectedDiv.hasChildNodes() && selectedDiv.innerHTML.trim() !== "") {
+      alert("This div has child!");
+    }
+
+    // ნაწილი 3: for loop -ით ყველა child განსხვავებული ფერით
+    let colors = ["red", "green", "blue", "purple"];
+    for (let i = 0; i < children.length; i++) {
+      children[i].style.backgroundColor = colors[i % colors.length];
+    }
+  </script>
+
+</body>
+</html>
