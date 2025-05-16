@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .dark-theme {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    .dark-theme .form-container {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Registration Form</h2>
+    <label for="age">Age:</label>
+    <input type="number" id="age" placeholder="Enter your age">
+
+    <label for="color">Background Color:</label>
+    <input type="text" id="color" placeholder="Enter a color (e.g. red, blue)">
+
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+
+  <script>
+    const ageInput = document.getElementById('age');
+    const colorInput = document.getElementById('color');
+    const themeToggleBtn = document.getElementById('themeToggle');
+    let isDarkTheme = false;
+
+    ageInput.addEventListener('input', () => {
+      const age = parseInt(ageInput.value);
+      if (!isNaN(age)) {
+        document.body.style.backgroundColor = age > 18 ? 'green' : 'red';
+      }
+    });
+
+    colorInput.addEventListener('input', () => {
+      const color = colorInput.value.trim();
+      document.body.style.backgroundColor = color;
+    });
+
+    themeToggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      isDarkTheme = !isDarkTheme;
+    });
+  </script>
+
+</body>
+</html>

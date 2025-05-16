@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Typing Animation</title>
+  <style>
+    body {
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    input, button {
+      font-size: 18px;
+      padding: 8px 12px;
+    }
+
+    #output {
+      font-size: 24px;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      min-height: 40px;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="textInput" placeholder="შეიყვანე ტექსტი..." />
+  <button id="startTypingBtn">დაწყება</button>
+  <div id="output"></div>
+
+  <script>
+    const input = document.getElementById('textInput');
+    const output = document.getElementById('output');
+    const startBtn = document.getElementById('startTypingBtn');
+
+    startBtn.addEventListener('click', () => {
+      const text = input.value;
+      output.textContent = '';
+      let index = 0;
+
+      const interval = setInterval(() => {
+        output.textContent += text[index];
+        index++;
+        if (index >= text.length) {
+          clearInterval(interval);
+        }
+      }, 150); 
+    });
+  </script>
+
+</body>
+</html>

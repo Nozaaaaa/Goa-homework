@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Switch Case Slider</title>
+</head>
+<body>
+  <img id="slider" src="1.jpg" width="300">
+  <br>
+  <button onclick="prev()">⟨ Prev</button>
+  <button onclick="next()">Next ⟩</button>
+
+  <script>
+    let index = 1;
+
+    function showImage() {
+      switch(index) {
+        case 1:
+          document.getElementById('slider').src = "https://cdn.discordapp.com/attachments/1237784949566996550/1369386476793499668/gurgenidze.jpg?ex=68243dca&is=6822ec4a&hm=386d5b0816072e2b48993b7b9f6914024372959c8f74e6f29db6ac8f894826f3&";
+          break;
+        case 2:
+          document.getElementById('slider').src = "https://cdn.discordapp.com/attachments/1237784949566996550/1369386477397606531/khmaladze.jpg?ex=68243dca&is=6822ec4a&hm=7ffbd78cfacdd564f0fbb7956962bdbb23b33687c72a4be29d7aa40804fdccdc&";
+          break;
+        case 3:
+          document.getElementById('slider').src = "https://cdn.discordapp.com/attachments/1237784949566996550/1369386477787549716/lomidze.jpg?ex=68243dca&is=6822ec4a&hm=17a53402b7eec1ac2993165bf1bf7550941ff109893cfdb7681a018b800b4636&";
+          break;
+        case 4:
+          document.getElementById('slider').src = "https://cdn.discordapp.com/attachments/1237784949566996550/1369386478341324921/motiashvili.jpg?ex=68243dca&is=6822ec4a&hm=9eca6b15a1add44e01b57122e170e530e077b81e819db009a13ed0b455268097&";
+          break;
+        case 5:
+          document.getElementById('slider').src = "https://cdn.discordapp.com/attachments/1237784949566996550/1369387396814344282/tskhvaradze.jpg?ex=68243ea5&is=6822ed25&hm=e8b9620e54f5945725db8f31c3752d9cddfae467e935298bd046e623e41496d3&";
+          break;
+      }
+    }
+
+    function next() {
+      index++;
+      if (index > 5) index = 1;
+      showImage();
+    }
+
+    function prev() {
+      index--;
+      if (index < 1) index = 5;
+      showImage();
+    }
+  </script>
+</body>
+</html>

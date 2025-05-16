@@ -1,0 +1,95 @@
+<!-- 1-2-3hw gaertianebulia -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animations Example</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: coral;
+      transition: border-radius 1s;
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+
+    .moving-box {
+      width: 50px;
+      height: 50px;
+      background-color: mediumseagreen;
+      position: relative;
+    }
+
+    @keyframes moveAround {
+      0% { top: 0; left: 0; }
+      25% { top: 0; left: 200px; }
+      50% { top: 200px; left: 200px; }
+      75% { top: 200px; left: 0; }
+      100% { top: 0; left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <button id="addDivBtn">დაამატე ელემენტი</button>
+  <div class="box" id="toggleShapeBox"></div>
+
+  <input type="number" id="durationInput" placeholder="შეიყვანე დრო წამებში" />
+  <button id="animateBoxBtn">გაანიმაციონოთ div</button>
+  <div class="moving-box" id="movingBox"></div>
+
+  <script>
+    // 1
+    document.getElementById('addDivBtn').addEventListener('click', () => {
+      const newDiv = document.createElement('div');
+      newDiv.textContent = 'ახალი ელემენტი';
+      newDiv.style.marginTop = '10px';
+      newDiv.style.padding = '10px';
+      newDiv.style.backgroundColor = '#ddd';
+      document.body.appendChild(newDiv);
+    });
+
+    // 2
+    const box = document.getElementById('toggleShapeBox');
+    box.addEventListener('click', () => {
+      box.classList.add('circle');
+      setTimeout(() => {
+        box.classList.remove('circle');
+      }, 1000); 
+    });
+
+    // 3
+    const movingBox = document.getElementById('movingBox');
+    document.getElementById('animateBoxBtn').addEventListener('click', () => {
+      const duration = parseFloat(document.getElementById('durationInput').value);
+      if (isNaN(duration) || duration <= 0) {
+        alert('გთხოვთ, შეიყვანოთ სწორი დრო წამებში');
+        return;
+      }
+
+      movingBox.style.animation = `moveAround ${duration}s linear`;
+      setTimeout(() => {
+        movingBox.style.animation = '';
+      }, duration * 1000);
+    });
+  </script>
+
+</body>
+</html>
